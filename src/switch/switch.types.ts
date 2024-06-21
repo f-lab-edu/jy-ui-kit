@@ -2,3 +2,5 @@ export interface SwitchRootProps extends ComponentPropsWithoutRefWithAsChild<"bu
   defaultChecked?: boolean;
   onSwitchStateChange?: (checkStatus: boolean) => void;
 }
+
+export type UseSwitchArgs = Omit<SwitchRootProps, "asChild">;
