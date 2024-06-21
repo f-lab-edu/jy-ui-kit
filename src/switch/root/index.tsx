@@ -1,14 +1,21 @@
 import { forwardRef } from "react";
 
 import { Slot } from "@/slot";
-import { mergeProps } from "@/utils/react";
+import { createContext, mergeProps } from "@/utils/react";
 
 import { getSwitchExtraProps } from "../get-switch-extra-props";
 
 import { useSwitch } from "./use-switch";
 
-import type { SwitchRootProps } from "../switch.types";
+import type { SwitchContext, SwitchRootProps } from "../switch.types";
 import type { ForwardedRef } from "react";
+
+const [SwitchProvider, useContext] = createContext<SwitchContext>({
+  contextName: "SwitchContext",
+  consumerHookName: "useSwitchContext",
+});
+
+export const useSwitchContext = useContext;
 
 export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: ForwardedRef<HTMLButtonElement>) => {
   const { asChild, ...switchRootProps } = props;
@@ -20,7 +27,11 @@ export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: Forwarde
 
   const extraProps = getSwitchExtraProps({ checked, disabled, readOnly, invalid });
 
-  return <Comp ref={forwardedRef} {...mergeProps(extraProps.rootProps, computedRootProps)} />;
+  return (
+    <SwitchProvider value={{ extraProps }}>
+      <Comp ref={forwardedRef} {...mergeProps(extraProps.rootProps, computedRootProps)} />
+    </SwitchProvider>
+  );
 });
 
 Switch.displayName = "Switch.Root";
