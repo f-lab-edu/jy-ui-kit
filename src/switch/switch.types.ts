@@ -18,3 +18,5 @@ export type UseSwitchArgs = Omit<SwitchRootProps, "asChild">;
 export interface GetSwitchExtraPropsArgs extends Pick<SwitchRootProps, "disabled" | "readOnly" | "invalid"> {
   checked: boolean;
 }
+
+export interface SwitchThumbProps extends ComponentPropsWithoutRefWithAsChild<"span"> {}

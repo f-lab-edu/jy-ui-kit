@@ -20,5 +20,10 @@ export const getSwitchExtraProps = (args: GetSwitchExtraPropsArgs) => {
       "aria-readonly": readOnly || undefined,
       "aria-invalid": invalid || undefined,
     },
+
+    thumbProps: {
+      ...dataAttrs,
+      "data-part": "thumb",
+    },
   } as const;
 };
