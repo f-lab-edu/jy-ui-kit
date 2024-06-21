@@ -4,3 +4,7 @@ export interface SwitchRootProps extends ComponentPropsWithoutRefWithAsChild<"bu
 }
 
 export type UseSwitchArgs = Omit<SwitchRootProps, "asChild">;
+
+export interface GetSwitchExtraPropsArgs extends Pick<SwitchRootProps, "disabled"> {
+  checked: boolean;
+}
