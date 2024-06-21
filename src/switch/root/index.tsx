@@ -15,10 +15,10 @@ export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: Forwarde
 
   const Comp = asChild ? Slot : "button";
 
-  const { checked, ...computedRootProps } = useSwitch(switchRootProps);
+  const { checked, readOnly = false, invalid = false, ...computedRootProps } = useSwitch(switchRootProps);
   const { disabled } = computedRootProps;
 
-  const extraProps = getSwitchExtraProps({ checked, disabled });
+  const extraProps = getSwitchExtraProps({ checked, disabled, readOnly, invalid });
 
   return <Comp ref={forwardedRef} {...mergeProps(extraProps.rootProps, computedRootProps)} />;
 });
