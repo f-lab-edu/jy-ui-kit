@@ -14,7 +14,7 @@ export const getSwitchExtraProps = (args: GetSwitchExtraPropsArgs) => {
   return {
     rootProps: {
       ...dataAttrs,
-      "data-part": "root",
+      "data-part": "control",
       role: "switch",
       "aria-checked": checked,
       "aria-readonly": readOnly || undefined,

@@ -3,9 +3,10 @@ import { combineEventHandlers, useControllableState } from "@/utils/react";
 import type { UseSwitchArgs } from "../switch.types";
 
 export const useSwitch = (args: UseSwitchArgs) => {
-  const { defaultChecked, onSwitchStateChange, ...switchRootProps } = args;
+  const { checked: checkedProps, defaultChecked, onSwitchStateChange, ...switchRootProps } = args;
 
   const [checked = false, setChecked] = useControllableState({
+    value: checkedProps,
     defaultValue: defaultChecked,
     onChange: onSwitchStateChange,
   });

@@ -2,6 +2,7 @@ import type { getSwitchExtraProps } from "./get-switch-extra-props";
 
 export interface SwitchRootProps extends ComponentPropsWithoutRefWithAsChild<"button"> {
   defaultChecked?: boolean;
+  checked?: boolean;
   readOnly?: boolean;
   invalid?: boolean;
   onSwitchStateChange?: (checkStatus: boolean) => void;
@@ -15,8 +16,7 @@ export interface SwitchContext {
 
 export type UseSwitchArgs = Omit<SwitchRootProps, "asChild">;
 
-export interface GetSwitchExtraPropsArgs extends Pick<SwitchRootProps, "disabled" | "readOnly" | "invalid"> {
-  checked: boolean;
-}
+export interface GetSwitchExtraPropsArgs
+  extends Pick<SwitchRootProps, "disabled" | "readOnly" | "invalid" | "checked"> {}
 
 export interface SwitchThumbProps extends ComponentPropsWithoutRefWithAsChild<"span"> {}
