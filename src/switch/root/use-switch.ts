@@ -11,7 +11,9 @@ export const useSwitch = (args: UseSwitchArgs) => {
     onChange: onSwitchStateChange,
   });
 
-  const handleSwitchClick = combineEventHandlers(switchRootProps.onClick, () => {
+  const handleSwitchClick = combineEventHandlers(switchRootProps.onClick, (e) => {
+    e.stopPropagation();
+
     if (switchRootProps.readOnly) return;
     setChecked((prevValue) => !prevValue);
   });
