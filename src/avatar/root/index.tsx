@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { forwardRef, useState } from "react";
 
 import { Slot } from "@/slot";
-import { createContext, mergeProps } from "@/utils/react";
+import { createContext } from "@/utils/react";
 
 import { getAvatarExtraProps } from "../get-avatar-extra-props";
 
@@ -30,7 +30,8 @@ export const Avatar = forwardRef((props: AvatarProps, forwardedRef: ForwardedRef
       <Comp
         ref={forwardedRef}
         className={clsx("base-avatar-root", className)}
-        {...mergeProps(avatarProps, extraProps.rootProps)}
+        {...avatarProps}
+        {...extraProps.rootProps}
       />
     </AvatarProvider>
   );

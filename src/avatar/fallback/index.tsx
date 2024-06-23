@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { forwardRef } from "react";
 
 import { Slot } from "@/slot";
-import { mergeProps } from "@/utils/react";
 
 import { useAvatarContext } from "../root";
 
@@ -19,7 +18,8 @@ export const AvatarFallback = forwardRef((props: AvatarFallbackProps, forwardedR
     <Comp
       ref={forwardedRef}
       className={clsx("base-avatar-fallback", className)}
-      {...mergeProps(avatarFallbackProps, avatarContext?.extraProps.fallbackProps)}
+      {...avatarFallbackProps}
+      {...avatarContext?.extraProps.fallbackProps}
     >
       {typeof children === "function" ? children(avatarContext?.imageLoadingStatus) : children}
     </Comp>
