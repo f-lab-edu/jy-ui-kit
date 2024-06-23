@@ -34,7 +34,7 @@ export const getSwitchExtraProps = (args: GetSwitchExtraPropsArgs) => {
     hiddenInputProps: {
       ...dataAttrs,
       ...ariaAttrs,
-      role: "input",
+      role: "switch",
       "aria-hidden": true,
     },
   } as const;
