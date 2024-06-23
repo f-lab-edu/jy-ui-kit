@@ -72,6 +72,7 @@ const HiddenInput = (props: SwitchHiddenInputProps) => {
     <input
       type="checkbox"
       ref={inputRef}
+      tabIndex={-1}
       className={clsx(base_switch_hidden_input, className)}
       defaultChecked={checked}
       {...hiddenInputProps}
