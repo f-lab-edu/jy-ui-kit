@@ -1,7 +1,7 @@
 import type { GetSwitchExtraPropsArgs } from "./switch.types";
 
 export const getSwitchExtraProps = (args: GetSwitchExtraPropsArgs) => {
-  const { checked, disabled, readOnly, invalid } = args;
+  const { checked, disabled, readOnly, invalid, required } = args;
 
   const dataAttrs = {
     "data-scope": "switch",
@@ -11,19 +11,31 @@ export const getSwitchExtraProps = (args: GetSwitchExtraPropsArgs) => {
     "data-invalid": invalid ? "" : undefined,
   };
 
+  const ariaAttrs = {
+    "aria-checked": checked,
+    "aria-readonly": readOnly || undefined,
+    "aria-invalid": invalid || undefined,
+    "aria-required": required || undefined,
+  };
+
   return {
     rootProps: {
       ...dataAttrs,
       "data-part": "control",
       role: "switch",
-      "aria-checked": checked,
-      "aria-readonly": readOnly || undefined,
-      "aria-invalid": invalid || undefined,
+      ...ariaAttrs,
     },
 
     thumbProps: {
       ...dataAttrs,
       "data-part": "thumb",
+    },
+
+    hiddenInputProps: {
+      ...dataAttrs,
+      ...ariaAttrs,
+      role: "input",
+      "aria-hidden": true,
     },
   } as const;
 };

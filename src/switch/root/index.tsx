@@ -1,13 +1,16 @@
-import { forwardRef } from "react";
+import clsx from "clsx";
+import { forwardRef, useRef } from "react";
 
 import { Slot } from "@/slot";
 import { createContext, mergeProps } from "@/utils/react";
 
 import { getSwitchExtraProps } from "../get-switch-extra-props";
 
+import { base_switch_hidden_input } from "./root.css";
 import { useSwitch } from "./use-switch";
+import { useSwitchHiddenInput } from "./use-switch-hidden-input";
 
-import type { SwitchContext, SwitchRootProps } from "../switch.types";
+import type { SwitchContext, SwitchHiddenInputProps, SwitchRootProps } from "../switch.types";
 import type { ForwardedRef } from "react";
 
 const [SwitchProvider, useContext] = createContext<SwitchContext>({
@@ -22,14 +25,22 @@ export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: Forwarde
 
   const Comp = asChild ? Slot : "button";
 
-  const { checked, readOnly = false, invalid = false, ...computedRootProps } = useSwitch(switchRootProps);
-  const { disabled } = computedRootProps;
+  const { checked, readOnly = false, invalid = false, required, ...computedRootProps } = useSwitch(switchRootProps);
+  const { disabled, name, value } = computedRootProps;
 
-  const extraProps = getSwitchExtraProps({ checked, disabled, readOnly, invalid });
+  const extraProps = getSwitchExtraProps({ checked, disabled, readOnly, invalid, required });
 
   return (
     <SwitchProvider value={{ extraProps }}>
       <Comp ref={forwardedRef} {...mergeProps(extraProps.rootProps, computedRootProps)} />
+      <HiddenInput
+        name={name}
+        value={value}
+        checked={checked}
+        required={required}
+        disabled={disabled}
+        extraProps={extraProps.hiddenInputProps}
+      />
     </SwitchProvider>
   );
 });
@@ -37,3 +48,21 @@ export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: Forwarde
 Switch.displayName = "Switch.Root";
 
 export const Root = Switch;
+
+const HiddenInput = (props: SwitchHiddenInputProps) => {
+  const { checked, className, extraProps, ...hiddenInputProps } = props;
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useSwitchHiddenInput({ checked, inputRef });
+
+  return (
+    <input
+      type="checkbox"
+      ref={inputRef}
+      className={clsx(base_switch_hidden_input, className)}
+      defaultChecked={checked}
+      {...mergeProps(hiddenInputProps, extraProps)}
+    />
+  );
+};
