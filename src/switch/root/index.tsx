@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { forwardRef, useRef } from "react";
 
 import { Slot } from "@/slot";
-import { createContext, mergeProps } from "@/utils/react";
+import { createContext } from "@/utils/react";
 
 import { getSwitchExtraProps } from "../get-switch-extra-props";
 
@@ -25,14 +25,26 @@ export const Switch = forwardRef((props: SwitchRootProps, forwardedRef: Forwarde
 
   const Comp = asChild ? Slot : "button";
 
-  const { checked, readOnly = false, invalid = false, required, ...computedRootProps } = useSwitch(switchRootProps);
+  const {
+    checked,
+    readOnly = false,
+    invalid = false,
+    required,
+    className,
+    ...computedRootProps
+  } = useSwitch(switchRootProps);
   const { disabled, name, value } = computedRootProps;
 
   const extraProps = getSwitchExtraProps({ checked, disabled, readOnly, invalid, required });
 
   return (
     <SwitchProvider value={{ extraProps }}>
-      <Comp ref={forwardedRef} {...mergeProps(extraProps.rootProps, computedRootProps)} />
+      <Comp
+        ref={forwardedRef}
+        className={clsx("base-switch-root", className)}
+        {...computedRootProps}
+        {...extraProps.rootProps}
+      />
       <HiddenInput
         name={name}
         value={value}
@@ -62,7 +74,8 @@ const HiddenInput = (props: SwitchHiddenInputProps) => {
       ref={inputRef}
       className={clsx(base_switch_hidden_input, className)}
       defaultChecked={checked}
-      {...mergeProps(hiddenInputProps, extraProps)}
+      {...hiddenInputProps}
+      {...extraProps}
     />
   );
 };

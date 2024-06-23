@@ -1,7 +1,7 @@
+import clsx from "clsx";
 import { forwardRef } from "react";
 
 import { Slot } from "@/slot";
-import { mergeProps } from "@/utils/react";
 
 import { useSwitchContext } from "../root";
 
@@ -10,12 +10,20 @@ import type { ForwardedRef } from "react";
 
 export const SwitchThumb = forwardRef((props: SwitchThumbProps, forwardedRef: ForwardedRef<HTMLSpanElement>) => {
   const { asChild, ...switchThumbProps } = props;
+  const { className } = switchThumbProps;
 
   const Comp = asChild ? Slot : "span";
 
   const switchContext = useSwitchContext();
 
-  return <Comp ref={forwardedRef} {...mergeProps(switchContext?.extraProps.thumbProps, switchThumbProps)} />;
+  return (
+    <Comp
+      ref={forwardedRef}
+      className={clsx("base-switch-thumb", className)}
+      {...switchThumbProps}
+      {...switchContext?.extraProps.thumbProps}
+    />
+  );
 });
 
 SwitchThumb.displayName = "Switch.Thumb";
