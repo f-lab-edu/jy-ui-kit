@@ -1,8 +1,7 @@
+import { Slot } from "@jy-ui/slot";
+import { createContext } from "@jy-ui/utils/react";
 import clsx from "clsx";
 import { forwardRef, useState } from "react";
-
-import { Slot } from "@/slot";
-import { createContext } from "@/utils/react";
 
 import { getAvatarExtraProps } from "../get-avatar-extra-props";
 
