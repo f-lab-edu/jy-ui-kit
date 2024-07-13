@@ -1,8 +1,7 @@
+import { Slot } from "@jy-ui/slot";
+import { useCallbackRef } from "@jy-ui/utils/react";
 import clsx from "clsx";
 import { forwardRef, useLayoutEffect } from "react";
-
-import { Slot } from "@/slot";
-import { useCallbackRef } from "@/utils/react";
 
 import { useAvatarContext } from "../root";
 
