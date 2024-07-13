@@ -1,8 +1,7 @@
+import { Slot } from "@jy-ui/slot";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import clsx from "clsx";
 import { forwardRef } from "react";
-
-import { Slot } from "@/slot";
 
 import { base_aspect_ratio_root_wrapper, base_aspect_ratio_root, ratio } from "./root.css";
 
