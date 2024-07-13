@@ -1,6 +1,5 @@
+import { MergeProps } from "@jy-ui/utils/services";
 import { Children, cloneElement, forwardRef, isValidElement } from "react";
-
-import { MergeProps } from "@/utils/services";
 
 import type { SlotProps } from "../slot.types";
 import type { ComponentPropsWithRef, ForwardedRef, MutableRefObject, ReactElement, Ref } from "react";
