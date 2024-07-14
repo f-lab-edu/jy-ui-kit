@@ -210,31 +210,31 @@ importers:
 
   packages/aspect-ratio:
     dependencies:
-      '@jy-ui/slot':
+      '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
 
   packages/avatar:
     dependencies:
-      '@jy-ui/slot':
+      '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
-      '@jy-ui/utils':
+      '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
 
   packages/button:
     dependencies:
-      '@jy-ui/slot':
+      '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
 
   packages/checkbox:
     dependencies:
-      '@jy-ui/slot':
+      '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
-      '@jy-ui/utils':
+      '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
       '@xstate/react':
@@ -246,16 +246,16 @@ importers:
 
   packages/slot:
     dependencies:
-      '@jy-ui/utils':
+      '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
 
   packages/switch:
     dependencies:
-      '@jy-ui/slot':
+      '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
-      '@jy-ui/utils':
+      '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
 

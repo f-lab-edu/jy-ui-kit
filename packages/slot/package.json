@@ -1,11 +1,11 @@
 {
-  "name": "@jy-ui/slot",
+  "name": "@jy-headless-ui/slot",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ag502/jy-ui-kit.git"
   },
   "dependencies": {
-    "@jy-ui/utils": "workspace:^"
+    "@jy-headless-ui/utils": "workspace:^"
   }
 }

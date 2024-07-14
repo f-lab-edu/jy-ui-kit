@@ -1,4 +1,4 @@
-import { Slot } from "@jy-ui/slot";
+import { Slot } from "@jy-headless-ui/slot";
 import clsx from "clsx";
 import { forwardRef } from "react";
 

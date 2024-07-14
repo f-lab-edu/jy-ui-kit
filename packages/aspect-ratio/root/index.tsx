@@ -1,4 +1,4 @@
-import { Slot } from "@jy-ui/slot";
+import { Slot } from "@jy-headless-ui/slot";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import clsx from "clsx";
 import { forwardRef } from "react";
