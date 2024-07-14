@@ -1,4 +1,4 @@
-import { combineEventHandlers, useControllableState } from "@/utils/react";
+import { combineEventHandlers, useControllableState } from "@jy-ui/utils/react";
 
 import type { UseSwitchArgs } from "../switch.types";
 

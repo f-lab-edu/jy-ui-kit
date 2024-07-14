@@ -1,8 +1,7 @@
+import { Slot } from "@jy-ui/slot";
+import { createContext } from "@jy-ui/utils/react";
 import clsx from "clsx";
 import { forwardRef, useRef } from "react";
-
-import { Slot } from "@/slot";
-import { createContext } from "@/utils/react";
 
 import { getSwitchExtraProps } from "../get-switch-extra-props";
 
