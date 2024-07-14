@@ -1,8 +1,7 @@
+import { Slot } from "@jy-ui/slot";
+import { createContext, useMachine } from "@jy-ui/utils/react";
 import clsx from "clsx";
 import { forwardRef } from "react";
-
-import { Slot } from "@/slot";
-import { createContext, useMachine } from "@/utils/react";
 
 import { checkboxMachineConnector } from "../machine/checkbox-connector";
 import { checkboxMachine } from "../machine/checkbox-machine";
