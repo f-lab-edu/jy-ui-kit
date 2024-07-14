@@ -1,4 +1,4 @@
-import { MergeProps } from "@jy-ui/utils/services";
+import { MergeProps } from "@jy-headless-ui/utils/services";
 import { Children, cloneElement, forwardRef, isValidElement } from "react";
 
 import type { SlotProps } from "../slot.types";

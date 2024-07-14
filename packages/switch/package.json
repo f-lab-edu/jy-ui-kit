@@ -1,12 +1,12 @@
 {
-  "name": "@jy-ui/switch",
+  "name": "@jy-headless-ui/switch",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ag502/jy-ui-kit.git"
   },
   "dependencies": {
-    "@jy-ui/slot": "workspace:^",
-    "@jy-ui/utils": "workspace:^"
+    "@jy-headless-ui/slot": "workspace:^",
+    "@jy-headless-ui/utils": "workspace:^"
   }
 }

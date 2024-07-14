@@ -1,5 +1,5 @@
-import { Slot } from "@jy-ui/slot";
-import { createContext } from "@jy-ui/utils/react";
+import { Slot } from "@jy-headless-ui/slot";
+import { createContext } from "@jy-headless-ui/utils/react";
 import clsx from "clsx";
 import { forwardRef, useRef } from "react";
 

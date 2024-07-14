@@ -1,4 +1,4 @@
-import { combineEventHandlers } from "@jy-ui/utils/react";
+import { combineEventHandlers } from "@jy-headless-ui/utils/react";
 
 import type { CheckboxMachineSend, CheckboxMachineState } from "../checkbox.types";
 import type { KeyboardEvent } from "react";
