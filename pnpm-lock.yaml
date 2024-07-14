@@ -223,6 +223,12 @@ importers:
         specifier: workspace:^
         version: link:../utils
 
+  packages/button:
+    dependencies:
+      '@jy-ui/slot':
+        specifier: workspace:^
+        version: link:../slot
+
   packages/checkbox:
     dependencies:
       '@jy-ui/slot':
