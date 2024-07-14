@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "@jy-ui/slot": "workspace:^",
-    "@jy-ui/utils": "workspace:^"
+    "@jy-ui/utils": "workspace:^",
+    "@xstate/react": "^4.1.1",
+    "xstate": "^5.15.0"
   }
 }
