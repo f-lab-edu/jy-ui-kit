@@ -1,7 +1,6 @@
+import { Slot } from "@jy-ui/slot";
 import clsx from "clsx";
 import { forwardRef } from "react";
-
-import { Slot } from "@/slot";
 
 import { useSwitchContext } from "../root";
 
