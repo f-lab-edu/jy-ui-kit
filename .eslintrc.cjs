@@ -20,7 +20,7 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
   ],
-  ignorePatterns: ["/dist", "!.storybook", "README.md"],
+  ignorePatterns: ["**/dist", "!.storybook", "README.md"],
   settings: {
     "import/resolver": {
       typescript: true,
