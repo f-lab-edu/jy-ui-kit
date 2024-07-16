@@ -4,5 +4,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ag502/jy-ui-kit.git"
+  },
+  "dependencies": {
+    "@xstate/react": "^4.1.1",
+    "xstate": "^5.15.0"
   }
 }
