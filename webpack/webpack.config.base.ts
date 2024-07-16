@@ -1,59 +1,47 @@
 import path from "path";
 
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
 import type { Configuration } from "webpack";
 
 import "webpack-dev-server";
 
-const webpackBaseConfig: Configuration = {
-  entry: "./src/main.tsx",
-  output: {
-    path: path.resolve(__dirname, "../dist"),
-    filename: "[contenthash].bundle.js",
-    clean: true,
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js"],
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
+export const getBaseWebpackConfig = (workspacePath: string): Configuration => {
+  return {
+    entry: path.resolve(__dirname, `../${workspacePath}/index.ts`),
+    output: {
+      path: path.resolve(__dirname, `../${workspacePath}/dist`),
+      filename: "[contenthash].bundle.js",
+      clean: true,
     },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(ts|tsx|js|jsx)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
+    resolve: {
+      extensions: [".tsx", ".ts", ".jsx", ".js"],
+      alias: {
+        "@": path.resolve(__dirname, "../src"),
       },
-      {
-        test: /\.vanilla\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: require.resolve("css-loader"),
-            options: {
-              url: false,
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(ts|tsx|js|jsx)$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: "babel-loader",
             },
-          },
-          "postcss-loader",
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: "./index.html",
-      hash: true,
-      cache: true,
-    }),
-    new MiniCssExtractPlugin(),
-  ],
+          ],
+        },
+        {
+          test: /\.vanilla\.css$/i,
+          use: [
+            {
+              loader: require.resolve("css-loader"),
+              options: {
+                url: false,
+              },
+            },
+            "postcss-loader",
+          ],
+        },
+      ],
+    },
+  };
 };
-
-export default webpackBaseConfig;
