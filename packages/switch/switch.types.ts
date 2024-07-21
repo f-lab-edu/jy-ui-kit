@@ -1,4 +1,5 @@
 import type { getSwitchExtraProps } from "./get-switch-extra-props";
+import type { ComponentPropsWithoutRefWithAsChild } from "@jy-headless-ui/types";
 import type { ComponentPropsWithoutRef, RefObject } from "react";
 
 export interface SwitchRootProps extends ComponentPropsWithoutRefWithAsChild<"button"> {

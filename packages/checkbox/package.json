@@ -5,10 +5,17 @@
     "type": "git",
     "url": "git+https://github.com/ag502/jy-ui-kit.git"
   },
+  "scripts": {
+    "build-type": "tsc --build"
+  },
   "dependencies": {
     "@jy-headless-ui/slot": "workspace:^",
     "@jy-headless-ui/utils": "workspace:^",
     "@xstate/react": "^4.1.1",
     "xstate": "^5.15.0"
+  },
+  "devDependencies": {
+    "@jy-headless-ui/types": "workspace:^",
+    "@jy-headless-ui/typescript-config": "workspace:^"
   }
 }

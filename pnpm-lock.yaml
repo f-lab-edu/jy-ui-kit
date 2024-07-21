@@ -216,6 +216,13 @@ importers:
       '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/avatar:
     dependencies:
@@ -225,12 +232,26 @@ importers:
       '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/button:
     dependencies:
       '@jy-headless-ui/slot':
         specifier: workspace:^
         version: link:../slot
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/checkbox:
     dependencies:
@@ -246,12 +267,26 @@ importers:
       xstate:
         specifier: ^5.15.0
         version: 5.15.0
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/slot:
     dependencies:
       '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
   packages/switch:
     dependencies:
@@ -261,6 +296,17 @@ importers:
       '@jy-headless-ui/utils':
         specifier: workspace:^
         version: link:../utils
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
+
+  packages/types: {}
+
+  packages/typescript-config: {}
 
   packages/utils:
     dependencies:
@@ -270,6 +316,13 @@ importers:
       xstate:
         specifier: ^5.15.0
         version: 5.15.0
+    devDependencies:
+      '@jy-headless-ui/types':
+        specifier: workspace:^
+        version: link:../types
+      '@jy-headless-ui/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
 
 packages:
 

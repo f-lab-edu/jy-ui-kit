@@ -1,3 +1,4 @@
+import type { Combine } from "./utils";
 import type {
   ComponentPropsWithoutRef,
   DetailedHTMLProps,
@@ -13,11 +14,11 @@ declare global {
       element: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
-
-  type ComponentPropsWithoutRefWithAsChild<Comp extends ElementType, Props = unknown> = Combine<
-    Combine<{ asChild?: boolean }, Props>,
-    ComponentPropsWithoutRef<Comp>
-  >;
-
-  type AriaAttributeWithRole = AriaAttributes & { role?: AriaRole };
 }
+
+export type ComponentPropsWithoutRefWithAsChild<Comp extends ElementType, Props = unknown> = Combine<
+  Combine<{ asChild?: boolean }, Props>,
+  ComponentPropsWithoutRef<Comp>
+>;
+
+export type AriaAttributeWithRole = AriaAttributes & { role?: AriaRole };

@@ -1,4 +1,4 @@
-import { combineEventHandlers, useControllableState } from "@jy-headless-ui/utils/react";
+import { combineEventHandlers, useControllableState } from "@jy-headless-ui/utils";
 
 import type { UseSwitchArgs } from "../switch.types";
 

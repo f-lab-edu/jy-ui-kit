@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "start": "webpack serve -c ./webpack/webpack.config.dev.ts --progress",
-    "build-dev": "ts-node ./webpack/webpack.config.dev.ts",
+    "build-type": "pnpm -r build-type",
+    "build-dev": "ts-node ./webpack/webpack.config.dev.ts && pnpm run build-type",
     "build": "webpack build -c ./webpack/webpack.config.prod.ts",
     "lint": "eslint --no-error-on-unmatched-pattern --ext **/*.{tsx,ts,jsx,js,md,mdx} --fix",
     "prepare": "husky",

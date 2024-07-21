@@ -50,11 +50,10 @@ const webpackDevConfig: Configuration = {
 
 const webpackOptions = globSync("packages/*")
   .map((path) => {
-    return path.includes("utils")
-      ? globSync("packages/utils/*", { ignore: ["packages/utils/node_modules/**", "packages/utils/package.json"] })
-      : path;
+    return path.includes("types") ? undefined : path;
   })
   .flat()
+  .filter((path): path is string => !!path)
   .map((path) => {
     const webpackBaseConfig = getBaseWebpackConfig(path);
     return mergeWithRules({
