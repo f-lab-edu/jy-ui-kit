@@ -1,0 +1,9 @@
+{
+  "name": "@jy-headless-ui/types",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ag502/jy-ui-kit.git"
+  }
+}
