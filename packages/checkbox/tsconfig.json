@@ -1,0 +1,8 @@
+{
+  "extends": "@jy-headless-ui/typescript-config/tsconfig.json",
+  "exclude": ["./**/*.stories.tsx", "dist/**"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "emitDeclarationOnly": true
+  }
+}
