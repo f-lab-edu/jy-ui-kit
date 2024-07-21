@@ -1,6 +1,7 @@
-import { combineEventHandlers } from "@jy-headless-ui/utils/react";
+import { combineEventHandlers } from "@jy-headless-ui/utils";
 
 import type { CheckboxMachineSend, CheckboxMachineState } from "../checkbox.types";
+import type { AriaAttributeWithRole } from "@jy-headless-ui/types";
 import type { KeyboardEvent } from "react";
 
 export const connector = (state: CheckboxMachineState, send: CheckboxMachineSend) => {

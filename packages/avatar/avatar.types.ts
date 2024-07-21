@@ -1,4 +1,5 @@
 import type { getAvatarExtraProps } from "./get-avatar-extra-props";
+import type { ComponentPropsWithoutRefWithAsChild } from "@jy-headless-ui/types";
 import type { Dispatch, ReactNode } from "react";
 
 export type AvatarExtraProps = ReturnType<typeof getAvatarExtraProps>;

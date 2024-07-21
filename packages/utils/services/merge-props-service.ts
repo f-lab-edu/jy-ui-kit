@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
 
+import type { AnyObj } from "@jy-headless-ui/types";
+
 class MergePropsService {
   private overrideProps!: AnyObj;
   private props1!: AnyObj;

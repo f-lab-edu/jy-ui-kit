@@ -1,4 +1,5 @@
 import type { ButtonProps } from "../../button.types";
+import type { AriaAttributeWithRole } from "@jy-headless-ui/types";
 import type { ComponentPropsWithoutRef } from "react";
 
 const useButton = (buttonProps?: ButtonProps) => {

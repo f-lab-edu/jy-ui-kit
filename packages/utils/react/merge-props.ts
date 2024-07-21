@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
 
+import type { AnyObj } from "@jy-headless-ui/types";
+
 export const mergeProps = (props1?: AnyObj, props2?: AnyObj, postProcess?: (className: string) => string) => {
   if (!props1 && !props2) return {};
 

@@ -1,5 +1,6 @@
 import type { checkboxMachineConnector } from "./machine/checkbox-connector";
 import type { checkboxMachine } from "./machine/checkbox-machine";
+import type { ComponentPropsWithoutRefWithAsChild } from "@jy-headless-ui/types";
 import type { FocusEventHandler, KeyboardEventHandler, MouseEventHandler, PointerEventHandler, ReactNode } from "react";
 import type { EventFromLogic, SnapshotFrom } from "xstate";
 

@@ -1,5 +1,5 @@
 import { Slot } from "@jy-headless-ui/slot";
-import { useCallbackRef } from "@jy-headless-ui/utils/react";
+import { useCallbackRef } from "@jy-headless-ui/utils";
 import clsx from "clsx";
 import { forwardRef, useLayoutEffect } from "react";
 
